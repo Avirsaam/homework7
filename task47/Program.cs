@@ -29,7 +29,8 @@ int GetNumberFromInput (string message)
     return result;
 }
 
-double[,] InitMatrix(int rows, int columns){
+double[,] InitMatrix(int rows, int columns)
+{
     double[,] matrix = new double[rows, columns];
     
     Random rnd = new Random();
