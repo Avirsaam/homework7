@@ -30,8 +30,21 @@ int[,] InitMatrix(int rows, int columns, int rndMax, int rndMin)
 }
 
 
+void PrintMatrix (int[,] matrix)
+{
+    for (int i = 0; i < matrix.GetLength(0); i++)
+    {
+        for (int j = 0; j < matrix.GetLength(1); j++)
+        {
+            Console.Write($"{matrix[i,j]}".PadLeft(7, ' '));
+            //".PadLeft(8, ' '));
+        }
+        Console.WriteLine();
+    }
+}
 
-const int columns = 0, rows = 1;
+
+const int columns = 1, rows = 0;
 int[] newMatrixDimensions = {6, 7};
 
 Console.Clear();
@@ -74,6 +87,8 @@ int[,] matrix = InitMatrix (rows : newMatrixDimensions[rows],
                             columns: newMatrixDimensions[columns],
                             rndMin: 0,
                             rndMax: 100);
+
+PrintMatrix (matrix);
 
 if (inputIndexes[columns] > matrix.GetLength(columns)
 ||  inputIndexes[rows] > matrix.GetLength(rows))
